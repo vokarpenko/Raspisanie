@@ -1,0 +1,63 @@
+create database название_базы; - создать новую базу
+show databases; - показать все базы
+use название_базы; - использовать базу
+create table название_таблицы (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, state CHAR(25), population INT(9));- создание таблицы
+
+
+//////////////////////////////////////////////////
+/////////////НАША БД/////////////////////////////
+/////////////////////////////////////////////////
+create database raspisanie;
+use raspisanie;
+
+create table Prepod (
+	ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nam_prepod CHAR(50)
+);
+
+create table Para (
+	ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	num_den INT(2),
+	num_par INT(1), 
+	prepod_id int,
+	foreign key(prepod_id) references Prepod(ID)
+	on update cascade on delete set null,
+	nam_para CHAR(100),
+	gruppa_id int,
+	foreign key(gruppa_id) references gruppa(ID)
+	on update cascade on delete set null
+);
+
+
+create table Student(
+	ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nam_Student CHAR(50),
+	login CHAR(100),
+	password INT(100)
+);
+
+create table Gruppa (
+	ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nam_gruppa CHAR(100)
+);
+
+create table Para_Gruppa (
+	para_id int,
+	gruppa_id int,
+	foreign key(para_id) references Para(ID)
+	on update cascade on delete cascade,
+	foreign key(gruppa_id) references Gruppa(ID)
+	on update cascade on delete cascade
+);
+
+create table pages(
+	page_id SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	page_alias   VARCHAR(255),
+	page_title   VARCHAR(255),
+	page_meta_d  VARCHAR(255),
+	page_meta_k  VARCHAR(255),
+	page_h1      VARCHAR(255),
+	page_s_desc  TEXT,
+	page_content TEXT,
+	page_publish CHAR DEFAULT 'Y'
+);
