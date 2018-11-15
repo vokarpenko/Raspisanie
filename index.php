@@ -8,6 +8,7 @@
 	$db->connect();
 
 	// ГЛАВНЫЙ КОНТРОЛЛЕР
+	
 	switch ($_GET['option']) {
 	case "page":
 		include($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/com/page.php");
