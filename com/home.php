@@ -1,5 +1,5 @@
 <?php defined('INDEX') OR die('Прямой доступ к странице запрещён!');
-	/* КОМПОНЕНТ СТРАНИЦЫ */
+/* КОМПОНЕНТ СТРАНИЦЫ */
 	$query = "SELECT * FROM pages WHERE page_alias='home' AND page_publish='Y' LIMIT 1";
 	$db->run($query);
 	$db->row();

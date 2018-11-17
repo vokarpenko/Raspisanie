@@ -1,5 +1,6 @@
 <?php defined('INDEX') OR die('Прямой доступ к странице запрещён!');
 	/* КОМПОНЕНТ СТРАНИЦЫ */
+	
 	$gruppa = $_GET['gruppa'];
 	$num_day = $_GET['nday'];
 

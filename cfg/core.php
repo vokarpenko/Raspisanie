@@ -37,6 +37,9 @@
 		function num_row() {
 			$this->nrows = mysqli_num_rows( $this->result);
 		}
+		function decode($escapestr){
+			return mysqli_real_escape_string($this->link, $escapestr);
+		}
 		function fetch() {
 			while ($this->data = mysqli_fetch_assoc($this->result)) {
 
