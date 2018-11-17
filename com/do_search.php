@@ -1,5 +1,5 @@
 <?php
-	//получаем данные через $_POST
+	//получаем данные через $_POSTи php
 	define("INDEX", "");
 	require_once($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/cfg/core.php"); 
 	session_start();
@@ -7,11 +7,26 @@
 	$db = new MyDB();
 	$db->connect();
 
-	if (isset($_POST['search'])) {
+	if ($_GET['keyword'] && !empty($_GET['keyword'])) {
 	    // никогда не доверяйте входящим данным! Фильтруйте всё!
-	    $word = $db->decode($_POST['search']);
+	    $word = $db->decode($_GET['keyword']);
 	    // Строим запрос
-	    $sql = "SELECT nam_prepod FROM prepod WHERE nam_prepod LIKE '%" . $word . "%' ORDER BY nam_prepod";
+	    $tabl=""; $param="";
+	    switch ($_GET['type']) {
+	    	case "1":
+		    	$tabl = "prepod";
+		    	$param ="nam_prepod"; 
+		    	break;
+		    case "2":
+		    	$tabl = "predmet";
+		    	$param ="nam_predmet"; 
+		    	break;
+		    case "3":
+		    	$tabl = "gruppa";
+		    	$param ="nam_gruppa"; 
+		    	break;
+		}
+		$sql = "SELECT ".$param." FROM ".$tabl." WHERE ".$param." LIKE '" . $word . "%' ORDER BY ".$param;
 	    // Получаем результаты
 	    $db->run($sql);
 	    $db->num_row();
@@ -20,13 +35,13 @@
 		    for ($i = 0 ; $i < $db->nrows ; ++$i)
 	    	{
 		        	$db->row();
-		            $result         = $db->data['nam_prepod'];
-		            $bold           = '<span class="found">' . $word . '</span>';
-		            $end_result     .= '<li>' . str_ireplace($word, $bold, $result) . '</li>';
+		            $result         = $db->data[$param];
+
+		            echo "<option     style ='display: none;'>" . $result . "</option>";
 	    	}
-	    	echo $end_result;
+	    	 
     	}else {
-	        echo '<li>По вашему запросу ничего не найдено</li>';
+	        echo '<option>Твою мать ничерта не найдено!!</option>';
 	    }
 
 	
