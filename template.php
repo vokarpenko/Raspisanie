@@ -4,7 +4,7 @@
 <h1>
 <?=$h1?>
 </h1>
-  <script  src="/RaspisanieServer/js/script.js"></script>
+  
 <body>
 <div id="main">
 	<br><br><br>
@@ -15,7 +15,7 @@
     	<td style="	width: 50%;">
 		    <div id="content">
 		    	Преподаватель:<br>
-		    	<input type="text" list="results1" id="searchbox1"/>
+		    	<input type="text" list="results1" id="sbPrepod"/>
 		    	<datalist id="results1"></datalist>
 		    </div>
 		    <br>
@@ -23,7 +23,7 @@
 		    <br>
 		    <div id="content">
 		    	Предмет: <br>
-		    	<input type="text" list="results2" id="searchbox2"/>
+		    	<input type="text" list="results2" id="sbPredmet"/>
 		    	<datalist id="results2"></datalist>
 		    </div>
 		    <br>
@@ -31,7 +31,7 @@
 		    <br>
 		    <div id="content">
 		    	Группа:<br>
-		    	<input type="text" list="results3" id="searchbox3"/>
+		    	<input type="text" list="results3" id="sbGruppa"/>
 		    	<datalist id="results3"></datalist>
 		    </div>
 		    <br>
@@ -39,7 +39,7 @@
 		    <br>
 		    <div id="content">
 		    	№ дня:
-		    	<select>
+		    	<select id = "selectDay">
 		    		<option>1</option>
 		    		<option>2</option>
 		    		<option>3</option>
@@ -59,9 +59,9 @@
 		    <br>
 		    <br>
 		    <br>
-		    <div id="content">
+		    <div id = "content">
 		    	№ пары:
-		    	<select>
+		    	<select id = "selectPar">
 		    		<option>1</option>
 		    		<option>2</option>
 		    		<option>3</option>
@@ -76,9 +76,9 @@
 		<td>
 		    
 		  		<div class="buttonHolder">
-				  <a href="#" class="button tick"></a>
+				  <a href="#" class="button tick" id = "buttonSend"></a>
 				</div>
-			
+				<datalist id="resultInfo"></datalist>
 		</td>
     </tr>
     </table>

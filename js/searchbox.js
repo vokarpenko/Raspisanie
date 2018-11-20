@@ -1,7 +1,7 @@
 "use strict";
 // этот код будет работать по современному стандарту ES5
 $(document).ready(function (e) {
-	$("#searchbox1").keyup( function () {
+	$("#sbPrepod").keyup( function () {
 			
             var key = $(this).val();
  
@@ -16,7 +16,7 @@ $(document).ready(function (e) {
                 }
         	});
 	});
-	$("#searchbox2").keyup( function () {
+	$("#sbPredmet").keyup( function () {
 			$("here").show();
             var key = $(this).val();
  
@@ -30,7 +30,7 @@ $(document).ready(function (e) {
                 }
         	});
 	});
-	$("#searchbox3").keyup( function () {
+	$("#sbGruppa").keyup( function () {
 			$("here").show();
             var key = $(this).val();
  
@@ -44,5 +44,7 @@ $(document).ready(function (e) {
                 }
         	});
 	});
+	
+
 
 });

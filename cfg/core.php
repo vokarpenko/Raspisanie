@@ -20,6 +20,7 @@
 			$this->link = mysqli_connect($this->dbhost, $this->dblogin, $this->dbpass);
 			mysqli_select_db($this->link, $this->db); 
 			mysqli_query($this->link ,'SET NAMES utf8');
+			
 		}
 
 		function close() {

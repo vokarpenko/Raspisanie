@@ -20,7 +20,7 @@
 			include ($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/template.php");
 			break;
 		case "mInfo":
-			include($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/com/page1.php");
+			include($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/com/infoTimeTable.php");
 			echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
 			break;
 		default:
