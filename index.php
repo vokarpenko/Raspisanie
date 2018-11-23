@@ -15,9 +15,8 @@
 	// ГЛАВНЫЙ КОНТРОЛЛЕР
 	if(!empty($_GET['option'])){
 		switch ($_GET['option']) {
-		case "page":
-			include($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/com/page.php");
-			include ($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/template.php");
+		case "add":
+			include($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/com/addPar.php");
 			break;
 		case "mInfo":
 			include($_SERVER['DOCUMENT_ROOT']."RaspisanieServer/com/infoTimeTable.php");
