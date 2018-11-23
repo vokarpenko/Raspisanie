@@ -1,10 +1,17 @@
- <link rel="stylesheet" type="text/css" href="\RaspisanieServer\css\home.css">
- <script  src="/RaspisanieServer/js/tableDD.js"></script>
+<link rel="stylesheet" type="text/css" href="\RaspisanieServer\css\home.css">
+<script  src="/RaspisanieServer/js/tableDD.js"></script>
+<div class="box">
+<table border="1" >
 <?php 
-for ($i = 0 ; $i < 10; ++$i)
+	for ($j = 0 ; $j < 10; ++$j)
     {
-    	echo "<div id='drag' class='draggable'>
-  <p> PARA </p>
-</div>";
+    	echo "<tr>";
+		for ($i = 0 ; $i < 10; ++$i)
+    	{
+    		echo "<td id='drag1'><div id='drag2' class='draggable'><p> PARA </p></div></td>";
+  		}
+  		echo "</tr>";
   	}
 ?>
+</table>
+</div>
