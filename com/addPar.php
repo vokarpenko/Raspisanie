@@ -1,6 +1,6 @@
 
- <script  src="/RaspisanieServer/js/searchbox.js"></script>
- <script  src="/RaspisanieServer/js/buttonSend.js"></script>
+ <script  src="/js/searchbox.js"></script>
+ <script  src="/js/buttonSend.js"></script>
 <title>
 Добавление пары
 </title>

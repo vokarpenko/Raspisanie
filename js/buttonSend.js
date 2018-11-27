@@ -7,7 +7,7 @@ $(document).ready(function (e) {
         var sDay = $("#selectDay").val();
         var sPar = $("#selectPar").val();
         $.ajax({
-                url:'/RaspisanieServer/com/addInDB.php',
+                url:'/com/addInDB.php',
                 type:'GET',
                 data:'prepod='+sbPrepod+'&predmet='+sbPredmet+'&gruppa='+sbGruppa+'&day='+sDay+'&para='+sPar,
                 success:function (data) {

@@ -1,3 +1,3 @@
 <?php 
-			header('Location: http://localhost/RaspisanieServer/?option=add ');
+			header('Location: http://timetable-fktpm.ru/?option=add ');
 ?>
