@@ -3,8 +3,8 @@
 // MYSQL
 	class MyDB 
 	{
-		var $dblogin = "root"; // ВАШ ЛОГИН К БАЗЕ ДАННЫХ
-		var $dbpass = ""; // ВАШ ПАРОЛЬ К БАЗЕ ДАННЫХ
+		var $dblogin = "phpmyadmin"; // ВАШ ЛОГИН К БАЗЕ ДАННЫХ
+		var $dbpass = "3j4pUb1i$6vI"; // ВАШ ПАРОЛЬ К БАЗЕ ДАННЫХ
 		var $db = "raspisanie"; // НАЗВАНИЕ БАЗЫ ДЛЯ САЙТА
 		var $dbhost="localhost";
 
