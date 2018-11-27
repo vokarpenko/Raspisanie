@@ -12,7 +12,7 @@ $(document).ready(function (e) {
                 data:'prepod='+sbPrepod+'&predmet='+sbPredmet+'&gruppa='+sbGruppa+'&day='+sDay+'&para='+sPar,
                 success:function (data) {
                     $("#resultInfo").html(data);
-                    $("#resultInfo").slideDown('fast');
+                    
                 }
         });       
     })
