@@ -22,6 +22,9 @@
 			include($_SERVER['DOCUMENT_ROOT']."/com/infoTimeTable.php");
 			echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
 			break;
+		case "mWish":
+			include($_SERVER['DOCUMENT_ROOT']."/com/putInfo.php");
+			break;
 		default:
 			include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
 			include ($_SERVER['DOCUMENT_ROOT']."/template.php");
