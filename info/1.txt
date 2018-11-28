@@ -1,2 +1,0 @@
-c:\Server\bin\Apache24\bin\httpd.exe -k restart
-C:\Server\bin\mysql-8.0\bin\mysql.exe -u root
