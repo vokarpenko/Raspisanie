@@ -18,6 +18,9 @@
 		case "add":
 			include($_SERVER['DOCUMENT_ROOT']."/com/addPar.php");
 			break;
+		case "createRaspisanie":
+			include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
+			break;
 		case "mInfo":
 			include($_SERVER['DOCUMENT_ROOT']."/com/infoTimeTable.php");
 			echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
@@ -26,19 +29,13 @@
 			include($_SERVER['DOCUMENT_ROOT']."/com/putInfo.php");
 			break;
 		default:
-			include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
-			include ($_SERVER['DOCUMENT_ROOT']."/template.php");
+			include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
 			break;
 		}
 	}
 	else{
 		
-		
-		
-		include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
-		include ($_SERVER['DOCUMENT_ROOT']."/template.php");
-		
-
+		include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
 	}
 	//$db->close();
 	   /*$_SESSION = array();
