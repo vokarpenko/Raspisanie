@@ -8,7 +8,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/cfg/core.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/com/library.php");
 $db = new MyDB();
 $db->connect();
-
+echo $_SERVER['HTTP_HOST'];
 	//$_SESSION['db']=$db;
 $is_mobile_device = check_mobile_device();
 if($is_mobile_device){
