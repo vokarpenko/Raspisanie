@@ -8,11 +8,14 @@ require_once($_SERVER['DOCUMENT_ROOT']."/cfg/core.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/com/library.php");
 $db = new MyDB();
 $db->connect();
-echo $_SERVER['HTTP_HOST'];
+echo ;
 	//$_SESSION['db']=$db;
 $is_mobile_device = check_mobile_device();
 if($is_mobile_device){
-	echo "Вы зашли с мобильного устройства";
+	if($_SERVER['HTTP_HOST'][0]!=m){
+		header('Location: http://m.timetable-fktpm.ru/');
+	}
+	// echo "Вы зашли с мобильного устройства";
 }else{
 	include($_SERVER['DOCUMENT_ROOT']."/com/head.php");
 	// ГЛАВНЫЙ КОНТРОЛЛЕР
