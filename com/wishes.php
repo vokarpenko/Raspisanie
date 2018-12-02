@@ -23,7 +23,7 @@
     $db2->run($sql);
     $db2->num_row();
     $pr_wishes = '';
-    for ($j = 0 ; $j < $db->nrows ; ++$j)
+    for ($j = 0 ; $j < $db2->nrows ; ++$j)
     {
       $db2->row();
       $wish = $db2->data['wish_text'];
