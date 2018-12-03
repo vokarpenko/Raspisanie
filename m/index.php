@@ -3,25 +3,30 @@
 // echo "<pre>HELLO MOBILE!</pre>";
 include($_SERVER['DOCUMENT_ROOT']."/m/com/head.php");
 
+if(!empty($_GET['option'])){
+	switch ($_GET['option']) {
+		case "prepod":
+		include($_SERVER['DOCUMENT_ROOT']."/m/com/prepod.php");
+		break;
+
+		case "student":
+		include($_SERVER['DOCUMENT_ROOT']."/m/com/student.php");
+		break;
+
+		case "home":
+		include($_SERVER['DOCUMENT_ROOT']."/m/com/home.php");
+		break;
+
+	
+
+		default:
+		include($_SERVER['DOCUMENT_ROOT']."/m/com/home.php");
+		break;
+	}
+}
+else{
+
+	include($_SERVER['DOCUMENT_ROOT']."/m/com/home.php");
+}
 ?>
 
-<body>
-	
-	<div class="section hero">
-		<div class="container">
-			<div class="row">
-				<h3 class="hero-heading">Выберите должность.</h3>
-			</div>
-			<div class="row">
-				<div class="one-half column">
-					<a class="button" href="#">Студент</a>
-				</div>
-				<div class="one-half column">
-					<a class="button" href="#">Преподаватель</a>
-				</div>
-
-			</div>
-		</div>
-
-	</div>
-</body>

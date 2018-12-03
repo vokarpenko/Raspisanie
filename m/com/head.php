@@ -1,6 +1,5 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="/m/css/my.css">	
 	<link rel="stylesheet" type="text/css" href="/m/css/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="/m/css/normalize.css">	
 	<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
