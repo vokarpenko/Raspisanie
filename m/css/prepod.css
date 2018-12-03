@@ -34,7 +34,10 @@
 	color: #fff;
 }
 
+.row {
+	padding: 1rem;
 
+}
 @media (min-width: 550px) {
 	.tabs_box {
 		width: 550px;
