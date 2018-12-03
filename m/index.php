@@ -5,7 +5,7 @@ include($_SERVER['DOCUMENT_ROOT']."/m/com/head.php");
 
 ?>
 
-
+<body>
 <div class="section hero">
 	<div class="container">
 		<div class="row">
@@ -19,3 +19,4 @@ include($_SERVER['DOCUMENT_ROOT']."/m/com/head.php");
 		</div>
 	</div>
 </div>
+</body>
