@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <label for="exampleMessage">Пожелание</label>
-                    <textarea class="u-full-width" placeholder="Прошу не ставить первую пару..." name="exampleMessage"></textarea>
+                    <textarea class="u-full-width" placeholder="Прошу не ставить первую пару..." name="wish"></textarea>
                 </div>
                 <div class="row">
                     <label for="">Ваш номер телефона</label>
