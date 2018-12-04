@@ -7,9 +7,9 @@
 	$db = new MyDB();
 	$db->connect();
 
-	if ($_GET['keyword'] && !empty($_GET['keyword'])) {
+	
 	    // никогда не доверяйте входящим данным! Фильтруйте всё!
-	    $word = $db->decode($_GET['keyword']);
+	    $word = $db->decode($_GET['term']);
 	    
 	   
 		$sql = "SELECT nam_kafedra FROM kafedra WHERE nam_kafedra LIKE '%" . $word . "%' ORDER BY nam_kafedra";
@@ -22,16 +22,19 @@
 	    	{
 		        	$db->row();
 		            $result         = $db->data['nam_kafedra'];
-
-		            echo "<option     style ='display: none;'>" . $result . "</option>";
+		            if($i != 0){
+		            	$end_result .=  ",\"".$result."\"";
+		            }
+		            else{
+		            	$end_result .=  "\"".$result."\"";
+		            }
+		            
 		           
 	    	}
-	    	 
-    	}else {
-	        echo '<option>Твою мать ничерта не найдено!!</option>';
-	    }
+	    	 echo "[". $end_result."]";
+    	}
 
 	
-	}
+	
 	$db->stop();
 ?>

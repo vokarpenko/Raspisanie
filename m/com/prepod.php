@@ -22,9 +22,7 @@
 
                 <div class="row">
                       <label for="exampleEmailInput">Кафедра</label>
-                      <input class="u-full-width" type="text" list="results1" id="nam_kafedra" placeholder="Кафедра математического моделирования" name="nam_kafedra" />
-                      <datalist id="results1"></datalist>
-                      <!-- <input class="u-full-width" type="text" placeholder="Кафедра математического моделирования" name="nam_kafedra"></input>  -->
+                      <input class="u-full-width" type="text" placeholder="Кафедра математического моделирования" name="nam_kafedra" id="department"></input>
                 </div>
                 <div class="row">
                     <label for="exampleMessage">Пожелание</label>
