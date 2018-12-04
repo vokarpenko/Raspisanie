@@ -2,21 +2,27 @@
 /* КОМПОНЕНТ СТРАНИЦЫ */
 if ($_GET['lastname'] && !empty($_GET['lastname'])&&($_GET['firstname'])&& 
 	!empty($_GET['firstname'])&&($_GET['fathername'])&& !empty($_GET['fathername'])&&
-	($_GET['phonenumber'])&& !empty($_GET['phonenumber'])&&($_GET['wish'])&& !empty($_GET['wish'])) 
+	($_GET['phonenumber'])&& !empty($_GET['phonenumber'])&&($_GET['wish'])&& !empty($_GET['wish'])&&($_GET['department'])&& !empty($_GET['department'])) 
 {
 	
 	$lastname = $db->decode($_GET['lastname']);
 	$firstname = $db->decode($_GET['firstname']);
 	$fathername = $db->decode($_GET['fathername']);
 	$phonenumber = $db->decode($_GET['phonenumber']);
+	$department = $db->decode($_GET['department']);
 	$wish = $db->decode($_GET['wish']);
+	
 	//неплохо было бы добавить проверку на тип данных
+	$query = "SELECT * FROM `kafedra` WHERE `nam_kafedra`='".$department."'";
+	$db->run($query);
+	$db->row();
+	$kafedra_id = $db->data['ID'];
 
 	$query = "SELECT * FROM `prepod` WHERE `nam_prepod`='".$lastname." ".$firstname." ".$fathername."'";
 	$db->run($query);
 	$db->num_row();
 	if($db->nrows==0){
-		$query = "INSERT INTO `prepod` (`ID`, `nam_prepod`, `phonenumber`) VALUES (NULL, '".$lastname." ".$firstname." ".$fathername."', '".$phonenumber."')";
+		$query = "INSERT INTO `prepod` (`ID`, `nam_prepod`, `phonenumber`,`kafedra_id`) VALUES (NULL, '".$lastname." ".$firstname." ".$fathername."', '".$phonenumber."','".$kafedra_id."')";
 		$db->run($query);
 		$query = "SELECT * FROM `prepod` WHERE `nam_prepod`='".$lastname." ".$firstname." ".$fathername."'";
 		$db->run($query);
