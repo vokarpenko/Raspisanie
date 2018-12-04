@@ -27,16 +27,25 @@ else{
 				case "add":
 				include($_SERVER['DOCUMENT_ROOT']."/com/addPar.php");
 				break;
+
 				case "createRaspisanie":
 				include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
 				break;
+
 				case "mInfo":
 				include($_SERVER['DOCUMENT_ROOT']."/com/infoTimeTable.php");
 				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
 				break;
+
+				case "mDepartment":
+				include($_SERVER['DOCUMENT_ROOT']."/com/departmentInfo.php");
+				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
+				break;
+
 				case "mWish":
 				include($_SERVER['DOCUMENT_ROOT']."/com/putInfo.php");
 				break;
+
 				default:
 				include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
 				break;
