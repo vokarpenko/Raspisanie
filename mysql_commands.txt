@@ -50,6 +50,8 @@ create table Para_Gruppa (
 	on update cascade on delete cascade
 );
 
+
+
 create table pages(
 	page_id SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	page_alias   VARCHAR(255),
@@ -61,3 +63,7 @@ create table pages(
 	page_content TEXT,
 	page_publish CHAR DEFAULT 'Y'
 );
+
+ALTER TABLE `prepod` ADD `kafedra_id` INT;
+ALTER TABLE `prepod` ADD foreign key(kafedra_id) references kafedra(ID)
+	on update cascade on delete cascade;
