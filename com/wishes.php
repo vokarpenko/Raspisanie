@@ -4,10 +4,12 @@
   <tr>
     <th>ФИО</th>
     <th>Номер телефона</th>
+    <th>Кафедра</th>
     <th>Пожелания</th>
+    
   </tr>
   <?php
-  $sql = "SELECT * FROM prepod ORDER BY nam_prepod";
+  $sql = "SELECT prepod.*, kafedra.nam_kafedra FROM prepod JOIN kafedra on prepod.kafedra_id = kafedra.ID ORDER BY nam_prepod";
   $db->run($sql);
   $db2 = new MyDB();
   $db2->connect();
@@ -19,7 +21,8 @@
     $prepod_id = $db->data['ID'];
     $fio = $db->data['nam_prepod'];
     $phonenumber = $db->data['phonenumber'];
-    $sql = "SELECT * FROM wishes WHERE `prepod_id` = '".$prepod_id."'";
+    $department = $db->data['nam_kafedra'];
+    $sql = "SELECT * FROM wishes WHERE prepod_id = '".$prepod_id."'";
     $db2->run($sql);
     $db2->num_row();
     $pr_wishes = '';
@@ -32,6 +35,7 @@
     $table .= "<tr>
             <td>".$fio."</td>
             <td>".$phonenumber."</td>
+            <td>".$department."</td>
             <td><pre>".$pr_wishes."</pre></td>
           </tr>";     
   }
