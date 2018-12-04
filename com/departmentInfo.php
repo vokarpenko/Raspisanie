@@ -2,7 +2,7 @@
 	/* КОМПОНЕНТ СТРАНИЦЫ */
 	
 
-	$query = "SELECT * FROM kafedra";
+	$query = "SELECT nam_kafedra FROM kafedra";
 	$db->run($query);
 	$db->num_row();
 
