@@ -16,7 +16,14 @@
 				</div>
 
 			</div>
+			
 		</div>
-
+		<div class="container-img">
+			<div class="row">
+				<a  href="/m/app/raspisanie.apk">
+					<img  class="android" src="/m/img/android.png" width="416" height="150">
+				</a>
+			</div>
+		</div>
 	</div>
 </body>

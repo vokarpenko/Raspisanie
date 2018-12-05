@@ -16,7 +16,16 @@
     margin-bottom: 1.2rem;
 }
 
-
+.container-img {
+  width: 96%;
+  max-width: 104px;
+  margin: 0 auto; /* центрируем основной контейнер */
+  padding:10px;
+}
+.android {
+  width: 100%; /* ширина картинки */
+  height: auto; /* высота картинки */
+}
 
 /* Help
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -68,6 +77,8 @@
     .hero-heading {
         font-size: 2.4rem;
     }
+
+
 }
 
 /* Bigger than 750 */
@@ -108,6 +119,7 @@
     .categories {
         padding: 15rem 0 8rem;
     }
+
 }
 
 /* Bigger than 1000 */
@@ -133,4 +145,5 @@
         top: -14rem;
         max-height: 570px;
     }
+
 }
