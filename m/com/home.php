@@ -5,7 +5,7 @@
 	<div class="section hero">
 		<div class="container">
 			<div class="row">
-				<h3 class="hero-heading">Выберите должность.</h3>
+				<h3 class="hero-heading">Пожалуйста, выберите как хотите продолжить</h3>
 			</div>
 			<div class="row">
 				<div class="one-half column">

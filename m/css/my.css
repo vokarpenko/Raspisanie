@@ -18,7 +18,7 @@
 
 .container-img {
   width: 96%;
-  max-width: 104px;
+  max-width: 208px;
   margin: 0 auto; /* центрируем основной контейнер */
   padding:10px;
 }

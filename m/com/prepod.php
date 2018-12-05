@@ -20,8 +20,8 @@
                       <input class="u-full-width" type="text" placeholder="Иванов Иван Иванович" name="nam_prepod"></input> 
                 </div>
 
-                <div class="row">
-                      <label for="exampleEmailInput">Кафедра</label>
+                <div class="row ui-widget">
+                      <label for="department">Кафедра</label>
                       <input class="u-full-width" type="text" placeholder="Кафедра математического моделирования" name="nam_kafedra" id="department"></input>
                 </div>
                 <div class="row">
