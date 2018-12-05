@@ -1,4 +1,4 @@
- 	$(document).ready(function(){function call() {
+function call() {
     var msg   = $('#formx').serialize();
     $.ajax({
       type: 'POST',
@@ -13,4 +13,3 @@
    });
 
   }
-     });
