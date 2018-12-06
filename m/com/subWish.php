@@ -70,7 +70,7 @@ if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra
 	}
 	
 }else{
-	echo "<span style ='color:red'>Ошибка: Введите все поля!!!</span>";
+	echo "<script>alert('Ошибка: Введите все поля!!!');</script>";
 }
 $db->stop();
 ?>
