@@ -50,10 +50,10 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
             ';
         }
         else{
-            phpinfo(); 
+           
          if(  is_uploaded_file($_FILES['filename']['tmp_name'])  )
          {
-            
+
         // Если файл загружен успешно, перемещаем его
         // из временной директории в конечную
             $dir=$_SERVER['DOCUMENT_ROOT']."/m/app";
