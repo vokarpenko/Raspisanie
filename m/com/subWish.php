@@ -70,7 +70,8 @@ if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra
 	}
 	
 }else{
-	echo "<script>alert('Ошибка: Введите все поля!!!');</script>";
+	echo "    <div id='dialog' title='Ошибка' style='display: none'>Введите все поля!!!
+    </div><script>infoWindow();</script>";
 }
 $db->stop();
 ?>
