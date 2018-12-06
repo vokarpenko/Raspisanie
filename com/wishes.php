@@ -9,7 +9,7 @@
     
   </tr>
   <?php
-  $sql = "SELECT prepod.*, kafedra.nam_kafedra FROM prepod JOIN kafedra on prepod.kafedra_id = kafedra.ID ORDER BY nam_prepod";
+  $sql = " SELECT prepod.*, kafedra.nam_kafedra FROM prepod JOIN kafedra on prepod.kafedra_id = kafedra.ID ORDER BY nam_kafedra, nam_prepod";
   $db->run($sql);
   $db2 = new MyDB();
   $db2->connect();

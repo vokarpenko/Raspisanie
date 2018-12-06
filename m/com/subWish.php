@@ -45,7 +45,8 @@ if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra
 			$db->row();
 			$prepod_id = $db->data['ID'];
 			$new_number= $db->data['phonenumber'];
-			if($new_number!=$phone){
+			$new_kafedra= $db->data['kafedra_id'];
+			if(($new_number!=$phone)||($new_kafedra !=$kafedra_id)){
 				$sql = "UPDATE `prepod` SET `phonenumber` = '".$phone."' , `kafedra_id` = '".$kafedra_id."' WHERE `prepod`.`ID` = '".$prepod_id."'";
 				$db->run($sql);
 			}
