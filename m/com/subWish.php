@@ -66,11 +66,11 @@ if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra
 		}
 
 	}else{
-		echo 'Ошибка необходимо ввести кафедру из выпадающего списка!!!';
+		echo "<span style ='color:red'>Ошибка: Необходимо ввести кафедру из выпадающего списка!!!</span>";
 	}
 	
 }else{
-	echo "Введите все поля!!!";
+	echo "<span style ='color:red'>Ошибка: Введите все поля!!!</span>";
 }
 $db->stop();
 ?>

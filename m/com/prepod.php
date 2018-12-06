@@ -10,10 +10,11 @@
             <li><a href="#tab1" class="active">Расписание</a></li>
             <li><a href="#tab2">Пожелания</a></li>
         </ul>
-        <div class="tab" id="tab1">
+        <div class="tab" id="tab1" >
             <p>Контент первой вкладки...</p>
         </div>
         <div class="tab" id="tab2">
+            <div id="results"></div>
             <form method="POST" id="formx" action="javascript:void(null);" onsubmit="call()">
                 <div class="row">
                       <label for="exampleEmailInput">ФИО</label>
@@ -36,6 +37,6 @@
                     <input class="button-primary" type="submit" value="Отправить"></input> 
                 </div>
             </form>
-        <div id="results">вывод</div>
+        
         </div>
 </div>
