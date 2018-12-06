@@ -33,10 +33,10 @@
       $pr_wishes .= "-       ".$wish."\n";      
     }
     $table .= "<tr>
-            <td>".$fio."</td>
+            <td><xmp>".$fio."</xmp></td>
             <td>".$phonenumber."</td>
             <td>".$department."</td>
-            <td><pre>".$pr_wishes."</pre></td>
+            <td><xmp>".$pr_wishes."</xmp></td>
           </tr>";     
   }
   echo $table;
