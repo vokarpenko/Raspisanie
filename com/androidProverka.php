@@ -38,6 +38,7 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
     {
 
         print "Привет, ".$db->data['user_login'].". Всё работает!";
+
         if (  ! $_FILES  )
         {   
             echo '
@@ -49,9 +50,10 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
             ';
         }
         else{
-             echo "<pre>",  print_r($_FILES),  "</pre>";
-      /*   if(  is_uploaded_file($_FILES['filename']['tmp_name'])  )
+            phpinfo(); 
+         if(  is_uploaded_file($_FILES['filename']['tmp_name'])  )
          {
+            
         // Если файл загружен успешно, перемещаем его
         // из временной директории в конечную
             $dir=$_SERVER['DOCUMENT_ROOT']."/m/app";
@@ -64,7 +66,7 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
         } 
         else {
             echo('Ошибка загрузки файла');
-        }*/
+        }
     }
 
 
