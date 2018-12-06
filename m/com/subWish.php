@@ -38,7 +38,7 @@ if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra
 			if($db->nrows==0){
 				$query2 = "INSERT INTO `wishes` (`ID`, `wish_text`, `prepod_id`) VALUES (NULL, '".$wish."', '".$prepod_id."')"  ;
 				$db->run($query2);
-				echo "Добавлен преподаватель и добавлены пожелания";
+				echo "<script>infoWindow2('Добавлен преподаватель и добавлены пожелания')</script>";
 			}
 		}
 		else{
@@ -58,20 +58,19 @@ if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra
 			if($db->nrows==0){
 				$query2 = "INSERT INTO `wishes` (`ID`, `wish_text`, `prepod_id`) VALUES (NULL, '".$wish."', '".$prepod_id."')"  ;
 				$db->run($query2);
-				echo "Обновлены данные о преподавателе и добавлены пожелания";
+				echo "<script>infoWindow2('Обновлены данные о преподавателе и добавлены пожелания')</script>";
 			}else{
-				echo "Обновлены данные о преподавателе";
+				echo "<script>infoWindow2('Обновлены данные о преподавателе')</script>";
 			}
 
 		}
 
 	}else{
-		echo "<span style ='color:red'>Ошибка: Необходимо ввести кафедру из выпадающего списка!!!</span>";
+		echo "<script>infoWindow1(' Необходимо ввести кафедру из выпадающего списка!!!');</script>";
 	}
 	
 }else{
-	echo "    <div id='dialog' title='Ошибка' style='display: none'>Введите все поля!!!
-    </div><script>infoWindow();</script>";
+	echo " <script>infoWindow1('Введите все поля!');</script>";
 }
 $db->stop();
 ?>

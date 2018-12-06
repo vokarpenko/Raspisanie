@@ -40,8 +40,9 @@
         </div>
     </form>
 
-    <div id="dialog" title="Basic dialog" style="display: none">
+ <div id='dialog1' title='Ошибка!' style='display: none'>
     </div>
-
+ <div id='dialog2' title='Успех!' style='display: none'>
+    </div>
 </div>
 </div>
