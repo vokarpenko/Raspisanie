@@ -1,8 +1,5 @@
 <?php 
 
-if(!isset($_SESSION)){ 
-	session_start();
-}
 define("INDEX", "");
 require_once($_SERVER['DOCUMENT_ROOT']."/cfg/core.php"); 
 require_once($_SERVER['DOCUMENT_ROOT']."/com/library.php");
@@ -30,6 +27,10 @@ else{
 
 				case "createRaspisanie":
 				include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
+				break;
+
+				case "android":
+				include($_SERVER['DOCUMENT_ROOT']."/com/android.php");
 				break;
 
 				case "mInfo":

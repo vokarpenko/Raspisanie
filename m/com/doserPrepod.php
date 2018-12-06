@@ -2,8 +2,6 @@
 	//получаем данные через $_POSTи php
 	define("INDEX", "");
 	require_once($_SERVER['DOCUMENT_ROOT']."/cfg/core.php"); 
-	session_start();
-
 	$db = new MyDB();
 	$db->connect();
 
