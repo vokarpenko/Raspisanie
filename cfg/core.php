@@ -4,7 +4,7 @@
 	class MyDB 
 	{
 		var $dblogin = "phpmyadmin"; // ВАШ ЛОГИН К БАЗЕ ДАННЫХ
-		var $dbpass = "3j4pUb1i$6vI"; // ВАШ ПАРОЛЬ К БАЗЕ ДАННЫХ
+		var $dbpass = "5E6mLD%)25"; // ВАШ ПАРОЛЬ К БАЗЕ ДАННЫХ
 		var $db = "raspisanie"; // НАЗВАНИЕ БАЗЫ ДЛЯ САЙТА
 		var $dbhost="localhost";
 
