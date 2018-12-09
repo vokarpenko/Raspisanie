@@ -1,5 +1,7 @@
 
+
 <link rel="stylesheet" type="text/css" href="/css/wishes.css">
+<div id ="tab">
 <table>
   <tr>
     <th>ФИО</th>
@@ -33,10 +35,10 @@
       $pr_wishes .= "-       ".$wish."\n";      
     }
     $table .= "<tr>
-            <td><xmp>".$fio."</xmp></td>
+            <td>".$fio."</td>
             <td>".$phonenumber."</td>
             <td>".$department."</td>
-            <td><xmp>".$pr_wishes."</xmp></td>
+            <td>".$pr_wishes."</code></td>
           </tr>";     
   }
   echo $table;
@@ -44,3 +46,4 @@
   $db2->stop();
   ?>
 </table>
+</div>
