@@ -9,10 +9,10 @@ $db->connect();
 
 if (($_POST['nam_prepod']) && !empty($_POST['nam_prepod'])&&($_POST['nam_kafedra'])&& !empty($_POST['nam_kafedra'])&&($_POST['phone'])&& !empty($_POST['phone'])&&($_POST['wish'])&& !empty($_POST['wish'])) {
 	    // никогда не доверяйте входящим данным! Фильтруйте всё!
-	$prepod = $db->decode($_POST['nam_prepod']);
+	$prepod = htmlspecialchars($db->decode($_POST['nam_prepod']));
 	$kafedra = $db->decode($_POST['nam_kafedra']);
 	$phone = $db->decode($_POST['phone']);
-	$wish = $db->decode($_POST['wish']);
+	$wish = htmlspecialchars($db->decode($_POST['wish']));
 	    // Строим запрос
 	$sql = "SELECT * FROM `kafedra` WHERE `nam_kafedra` LIKE '" . $kafedra . "'";
 	    // Получаем результаты
