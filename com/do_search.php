@@ -40,9 +40,7 @@
 		            echo "<option     style ='display: none;'>" . $result . "</option>";
 	    	}
 	    	 
-    	}else {
-	        echo '<option>Твою мать ничерта не найдено!!</option>';
-	    }
+    	}
 
 	
 	}
