@@ -7,11 +7,11 @@ $(document).ready(function (e) {
         var sDay = $("#selectDay").val();
         var sPar = $("#selectPar").val();
         $.ajax({
-                url:'/com/addInDB.php',
+                url:'/cfg2/addInDB.php',
                 type:'GET',
                 data:'prepod='+sbPrepod+'&predmet='+sbPredmet+'&gruppa='+sbGruppa+'&day='+sDay+'&para='+sPar,
                 success:function (data) {
-                    $("#resultInfo").html(data);
+                    $("#resultInfo").text(data);
                     
                 }
         });       

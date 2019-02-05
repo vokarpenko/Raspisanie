@@ -81,7 +81,7 @@
 		  		<div class="buttonHolder">
 				  <a href="#" class="button tick" id = "buttonSend"></a>
 				</div>
-				<datalist id="resultInfo"></datalist>
+				<div id="resultInfo"></div>
 		</td>
     </tr>
     </table>

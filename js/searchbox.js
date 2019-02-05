@@ -6,7 +6,7 @@ $(document).ready(function (e) {
             var key = $(this).val();
  
             $.ajax({
-                url:'/com/do_search.php',
+                url:'/cfg2/do_search.php',
                 type:'GET',
                 data:'keyword='+key+'&type=1',
                 
@@ -21,7 +21,7 @@ $(document).ready(function (e) {
             var key = $(this).val();
  
             $.ajax({
-                url:'/com/do_search.php',
+                url:'/cfg2/do_search.php',
                 type:'GET',
                 data:'keyword='+key+'&type=2',
                 success:function (data) {
@@ -35,7 +35,7 @@ $(document).ready(function (e) {
             var key = $(this).val();
  
             $.ajax({
-                url:'/com/do_search.php',
+                url:'/cfg2/do_search.php',
                 type:'GET',
                 data:'keyword='+key+'&type=3',
                 success:function (data) {
