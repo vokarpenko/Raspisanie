@@ -5,8 +5,15 @@
 }
 .pMenu{
 	padding: 20px;
-	margin: 20px;
+	margin-top: 30px;
 	width: 100%;
 
+}
+#jok{
+	text-align: center;
+	font-size: 35px;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	width: 100%;
 }
 

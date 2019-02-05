@@ -9,10 +9,21 @@ $_SESSION['login'] = 'admin';
 <title> Меню Разработчика </title>
 
 <body>
+	
 	<div class="row">
 		<div class="col-2">
 		</div>
 		<div class="col-8 box">
+			
+				
+				<div id="jok">
+					
+						Меню разработчика
+					
+				</div>
+				
+			
+
 			<div class="row">
 				<div class="col-1">
 					</div>
