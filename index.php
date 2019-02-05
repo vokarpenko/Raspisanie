@@ -48,13 +48,13 @@ else{
 				break;
 
 				default:
-				include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
+				include($_SERVER['DOCUMENT_ROOT']."/com/wishesCheck.php");
 				break;
 			}
 		}
 		else{
 
-			include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
+			include($_SERVER['DOCUMENT_ROOT']."/com/wishesCheck.php");
 		}
 	}}
 	// ПОДКЛЮЧЕНИЕ ЯДРА
