@@ -22,7 +22,12 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
     }
     else
     {
-        include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
+        if(intval($_COOKIE['admin'])==1){
+            include($_SERVER['DOCUMENT_ROOT']."/com/rMenu.php");
+        }
+        else{
+            include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
+        }
        
     }
 }

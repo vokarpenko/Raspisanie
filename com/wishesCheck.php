@@ -16,8 +16,15 @@ if(isset($_POST['submit']))
         # Ставим куки
         setcookie("id", $db->data['user_id'], time()+60*60*24*30);
         setcookie("hash", $hash, time()+60*60*24*30);
+        if(($_POST['login']=="vokarpenko")||($_POST['login']=="admin")){
+            setcookie("admin", 1, time()+60*60*24*30);
+        }
+        else{
+          setcookie("admin", 0, time()+60*60*24*30);
+        }
+
         # Переадресовываем браузер на страницу проверки нашего скрипта
-        header("Location: /com/wishesCheck2.php"); exit();
+        header("Location: /wishesCheck2.php"); exit();
     }
     else
     {

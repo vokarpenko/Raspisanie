@@ -5,6 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/cfg/core.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/com/library.php");
 $db = new MyDB();
 $db->connect();
+session_start();
 	//$_SESSION['db']=$db;
 $is_mobile_device = check_mobile_device();
 if($_SERVER['HTTP_HOST'][0]=='m'){
@@ -22,15 +23,39 @@ else{
 		if(!empty($_GET['option'])){
 			switch ($_GET['option']) {
 				case "add":
-				include($_SERVER['DOCUMENT_ROOT']."/com/addPar.php");
+					if((!empty($_SESSION['login']))&&($_SESSION['login'] == 'admin')){
+						include($_SERVER['DOCUMENT_ROOT']."/com/addPar.php");
+					}
+					else{
+						echo "нет прямого доступа!";
+					}
 				break;
 
 				case "createRaspisanie":
-				include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
+					if((!empty($_SESSION['login']))&&($_SESSION['login'] == 'admin')){
+						include($_SERVER['DOCUMENT_ROOT']."/com/home.php");
+					}
+					else{
+						echo "нет прямого доступа!";
+					}
 				break;
 
 				case "android":
-				include($_SERVER['DOCUMENT_ROOT']."/com/android.php");
+					if((!empty($_SESSION['login']))&&($_SESSION['login'] == 'admin')){
+						include($_SERVER['DOCUMENT_ROOT']."/com/androidProverka.php");
+					}
+					else{
+						echo "нет прямого доступа!";
+					}
+				break;
+
+				case "Wishes":
+					if((!empty($_SESSION['login']))&&($_SESSION['login'] == 'admin')){
+						include($_SERVER['DOCUMENT_ROOT']."/com/wishes.php");
+					}
+					else{
+						echo "нет прямого доступа!";
+					}
 				break;
 
 				case "mInfo":

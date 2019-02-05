@@ -1,11 +1,7 @@
 <?php
 // Скрипт проверки
 # Соединямся с БД
-define("INDEX", "");
-require_once($_SERVER['DOCUMENT_ROOT']."/cfg/core.php"); 
-require_once($_SERVER['DOCUMENT_ROOT']."/com/library.php");
-$db = new MyDB();
-$db->connect();
+
 
 
 if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
@@ -22,7 +18,7 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
     }
     else
     {
-        print "Привет, ".$db->data['user_login'].". Всё работает!";
+        print "Привет, ".$db->data['user_login'].".  ";
         if (  ! $_FILES  )
         {   
             echo '
@@ -45,6 +41,7 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
             $_FILES["filename"]["tmp_name"],
             "$dir/$nam"
             );
+            echo "успешно!";
         } 
         else {
             echo('Ошибка загрузки файла');
