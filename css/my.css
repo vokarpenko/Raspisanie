@@ -60,6 +60,13 @@ input {
     top: 16px;
 }
 
+.plus:after {
+    content: "✚";
+    left: 22px;
+    top: 16px;
+}
+
+
 .flower:after {
     content: "✿";
     left: 23px;
@@ -74,7 +81,7 @@ input {
 
 .cross:after {
     content: "✖";
-    left: 24px;
+    left: 22px;
     top: 15px;
 }
 
@@ -95,6 +102,11 @@ input {
 }
 
 .tick:hover:after {
+    color: #83d244;
+    text-shadow: 0px 0px 6px #83d244;
+}
+
+.plus:hover:after {
     color: #83d244;
     text-shadow: 0px 0px 6px #83d244;
 }

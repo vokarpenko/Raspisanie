@@ -72,6 +72,10 @@ else{
 				include($_SERVER['DOCUMENT_ROOT']."/com/putInfo.php");
 				break;
 
+				case "dictionary":
+				include($_SERVER['DOCUMENT_ROOT']."/com/dictionary.php");
+				break;
+
 				default:
 				include($_SERVER['DOCUMENT_ROOT']."/com/wishesCheck.php");
 				break;

@@ -1,0 +1,56 @@
+#feedback {
+ font-size: 1.4em; 
+}
+#selectable1 .ui-selecting { 
+	background: #FECA40; 
+}
+#selectable1 .ui-selected {
+ background: #F39814; color: white; 
+}
+#selectable1 { 
+	list-style-type: none; margin: 0; padding: 0; width: 100%; 
+}
+#selectableTd1{
+ width: 100%; 
+
+}
+
+#selectable2 .ui-selecting { 
+	background: #FECA40; 
+}
+#selectable2 .ui-selected {
+ background: #F39814; color: white; 
+}
+#selectable2 { 
+	list-style-type: none; margin: 0; padding: 0; width: 100%; 
+}
+#selectableTd2{
+ width: 100%; 
+
+}
+
+
+#selectable3 .ui-selecting { 
+	background: #FECA40; 
+}
+#selectable3 .ui-selected {
+ background: #F39814; color: white; 
+}
+#selectable3 { 
+	list-style-type: none; margin: 0; padding: 0; width: 100%; 
+}
+#selectableTd3{
+ width: 100%; 
+
+}
+
+
+.but1{
+	width: 10%
+}
+#selectable li {
+ margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px;
+ width: 95%;
+ font-size: 14;
+  }
+
