@@ -69,6 +69,15 @@ $_SESSION['login'] = 'admin';
 				<div class="col-1">
 					</div>
 			</div>
+			<div class="row">
+				<div class="col-1">
+					</div>
+				<div class="col-10">
+					<a href="../index.php?option=phpInfo" class="btn btn-primary btn-lg active pMenu" role="button" aria-pressed="true">Php info</a>
+				</div>
+				<div class="col-1">
+					</div>
+			</div>
 		</div>
 		<div class="col-2">
 		</div>

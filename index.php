@@ -58,6 +58,10 @@ else{
 					}
 				break;
 
+				case "phpInfo":
+					phpinfo();
+				break;
+
 				case "mInfo":
 				include($_SERVER['DOCUMENT_ROOT']."/com/infoTimeTable.php");
 				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
