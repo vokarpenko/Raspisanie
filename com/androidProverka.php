@@ -35,7 +35,7 @@ if (isset($_COOKIE['id']) and isset($_COOKIE['hash']))
         // Если файл загружен успешно, перемещаем его
         // из временной директории в конечную
             $dir=$_SERVER['DOCUMENT_ROOT']."/m/app";
-            $nam="raspisanie.apk";
+            $nam=$_FILES["filename"]["name"];
             move_uploaded_file
             (
             $_FILES["filename"]["tmp_name"],
