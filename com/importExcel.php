@@ -24,19 +24,19 @@ for ($i = 0 ; $i < $db->nrows ; ++$i)
   if(array_key_exists($db->data['nam_gruppa'],$main_matrix))
   {
       if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = $db->data['nam_predmet']." ".$db->data['nam_prepod']; 
+          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
       }else{
         $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = $db->data['nam_predmet']." ".$db->data['nam_prepod']; 
+        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
       }
   }
   else{
     $main_matrix[$db->data['nam_gruppa']]= array();
     if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = $db->data['nam_predmet']." ".$db->data['nam_prepod']; 
+          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
       }else{
         $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = $db->data['nam_predmet']." ".$db->data['nam_prepod']; 
+        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
       }
 
   }
@@ -92,7 +92,7 @@ $table.="<tr>";
       $table.="<tr><td style ='width:5%'>".$j."</td>";
 
       foreach ( $main_matrix as $key =>$gruppa ) {
-        $table.="<td style ='width:400px'>".$main_matrix[$key][$i][$j]."</td>";
+        $table.="<td style ='width:400px'><pre>".$main_matrix[$key][$i][$j]."</pre></td>";
       }
       $table.="</tr>";
     }
