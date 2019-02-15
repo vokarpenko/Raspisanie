@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/css/wishes2.css">
 <div id ="tab">
   <?php
-$sql = " SELECT * FROM gruppa";
+$sql = "SELECT DISTINCT gruppa.nam_gruppa FROM para JOIN gruppa on para.gruppa_id = gruppa.ID";
 $db->run($sql);
 $db->num_row();
 $ngrupp=$db->nrows;
