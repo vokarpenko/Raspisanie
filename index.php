@@ -60,6 +60,7 @@ else{
 
 				case "phpInfo":
 					phpinfo();
+					echo $_SERVER['DOCUMENT_ROOT']."/m/app";
 				break;
 
 				case "mInfo":
