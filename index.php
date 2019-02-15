@@ -63,6 +63,15 @@ else{
 					echo $_SERVER['DOCUMENT_ROOT']."/m/app";
 				break;
 
+				case "importExcel":
+				if((!empty($_SESSION['login']))&&($_SESSION['login'] == 'admin')){
+						include($_SERVER['DOCUMENT_ROOT']."/com/importExcel.php");
+					}
+					else{
+						echo "нет прямого доступа!";
+					}
+				break;
+
 				case "mInfo":
 				include($_SERVER['DOCUMENT_ROOT']."/com/infoTimeTable.php");
 				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
