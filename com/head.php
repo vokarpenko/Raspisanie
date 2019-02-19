@@ -1,7 +1,7 @@
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="/css/my.css">
+
 	
 	<!-- jquery -->
 	<link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">

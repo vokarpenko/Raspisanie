@@ -73,6 +73,15 @@ $_SESSION['login'] = 'admin';
 				<div class="col-1">
 					</div>
 				<div class="col-10">
+					<a href="../index.php?option=viewTT" class="btn btn-primary btn-lg active pMenu" role="button" aria-pressed="true">Просмотр расписания</a>
+				</div>
+				<div class="col-1">
+					</div>
+			</div>
+			<div class="row">
+				<div class="col-1">
+					</div>
+				<div class="col-10">
 					<a href="../index.php?option=importExcel" class="btn btn-primary btn-lg active pMenu" role="button" aria-pressed="true">ImportFromExcel</a>
 				</div>
 				<div class="col-1">

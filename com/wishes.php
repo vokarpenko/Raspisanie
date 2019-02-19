@@ -1,5 +1,5 @@
 
-
+<title>Таблица пожеланий</title>
 <link rel="stylesheet" type="text/css" href="/css/wishes.css">
 <div id ="tab">
 <table>

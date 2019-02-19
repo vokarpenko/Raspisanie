@@ -12,18 +12,32 @@
 	$db->run($query2);
 	$db->num_row();
 
-	// ПЕРЕМЕННЫЕ КОМПОНЕНТА
-	
-	// ЕСЛИ СТРАНИЦЫ НЕ СУЩЕСТВУЕТ
 	$table = array();
-
+	$table2 = array();
 	for ($i = 0 ; $i < $db->nrows ; ++$i)
-    {
-        $db->row();
-        $table[] = $db->data;
-    }
-    $table1 = array();
+	{
+	    $db->row();
+	    $table[] = $db->data;
+	}
+	$sql = "SELECT  tpara.num_par, tprepod.nam_prepod, tpredmet.nam_predmet FROM tpara  JOIN tprepod on tpara.prepod_id = tprepod.ID  JOIN tpredmet on tpara.predmet_id = tpredmet.ID JOIN gruppa on tpara.gruppa_id = gruppa.ID WHERE gruppa_id='".$gruppa_id."' AND num_den='".$num_day."'"  ;
+	$db->run($sql);
+	$db->num_row();
+	for ($i = 0 ; $i < $db->nrows ; ++$i)
+	{
+	    $db->row();
+	    $table2[] = $db->data;
+	}
 
+	foreach ($table as $key => $value) {
+		$num_par=$table[$key]['num_par'];
+		foreach ($table2 as $key2 => $value2) {
+			if($num_par = $table2[$key2]['num_par']){
+				unset($table2[$key2]);
+			}
+		}
+	}
+	$table= array_merge($table,$table2);
+    
 
 	$db->stop();
 ?>

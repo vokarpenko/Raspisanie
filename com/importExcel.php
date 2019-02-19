@@ -1,112 +1,51 @@
-<link rel="stylesheet" type="text/css" href="/css/wishes2.css">
-<div id ="tab">
-  <?php
-$sql = "SELECT DISTINCT gruppa.nam_gruppa FROM para JOIN gruppa on para.gruppa_id = gruppa.ID";
-$db->run($sql);
-$db->num_row();
-$ngrupp=$db->nrows;
-echo "<body style ='width:".(500*$ngrupp)."px' >";
-?>
-<body >
- <h1>Расписание</h1> 
-<table >
-  
-  
- <?php
-$main_matrix = array();
-$sql = " SELECT num_den, num_par, predmet.nam_predmet, prepod.nam_prepod, gruppa.nam_gruppa FROM para JOIN prepod on para.prepod_id = prepod.ID JOIN predmet on para.predmet_id = predmet.ID JOIN gruppa on para.gruppa_id = gruppa.ID";
-$db->run($sql);
-$db->num_row();
-for ($i = 0 ; $i < $db->nrows ; ++$i)
-{
-
-  $db->row();
-  if(array_key_exists($db->data['nam_gruppa'],$main_matrix))
-  {
-      if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }else{
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }
-  }
-  else{
-    $main_matrix[$db->data['nam_gruppa']]= array();
-    if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }else{
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }
-
-  }
-  
-}
 
 
-foreach ( $main_matrix as $key =>$gruppa ) {
-  for ($i = 1 ; $i <= 14 ; $i++){
-    if(!(array_key_exists($i,$main_matrix[$key]))){
-      $main_matrix[$key][$i]=array();
-      for ($j = 1 ; $j <= 7 ; ++$j){
-        $main_matrix[$key][$i][$j]="";
-      }
-    }
-    else{
-      for ($j = 1 ; $j <= 7 ; ++$j){
-        if(!array_key_exists($j,$main_matrix[$key][$i])){
-          $main_matrix[$key][$i][$j]="";
-        }
-      }
-    }
-  }
-}
+	<link rel="stylesheet" type="text/css" href="/m/css/skeleton.css">
+	<link rel="stylesheet" type="text/css" href="/m/css/normalize.css">	
+	<script src="/js/importExcel.js"></script>
 
+<title>ImportFromExcel</title>
 
-
-
-$table="";
-/*$table.="<tr>";
-foreach ( $main_matrix as $key => $gruppa ) {
-  $table.="<td>".$key."</td>";
-}
-$table.="</tr>";*/
-
-
-
-$table.="<tr>";
-
-/*foreach ( $main_matrix as $key =>$gruppa ) {
-  $table.="<td style= 'width:50%'><table style= 'height:100%'>";*/
-  for ($i = 1 ; $i <= 14 ; $i++){
-    
-    $table.="<tr><td>".$i."</td><td><table>";
-    for ($j = 1 ; $j <= 7 ; $j++){
-      if(($j == 1)&&($i == 1)){
-        $table.="<tr><td></td>";
-        foreach ( $main_matrix as $key => $gruppa ) {
-          $table.="<td>".$key."</td>";
-        }
-        $table.="</tr>";
-      }
-      $table.="<tr><td style ='width:5%'>".$j."</td>";
-
-      foreach ( $main_matrix as $key =>$gruppa ) {
-        $table.="<td style ='width:400px'><pre>".$main_matrix[$key][$i][$j]."</pre></td>";
-      }
-      $table.="</tr>";
-    }
-    $table.="</table></td></tr>";
-  }
- /* $table.="</table></td>";
-}
-$table.="</tr>";*/
-
-
-
-  echo $table;
-  $db->stop();
-
-  ?>
-</table>
+<div class ="container" >
+	<h1 style="padding-top: 30px;padding-bottom: 30px">ImportFromExcel</h1>
+	<form>
+	  <div class="row">
+	    <div class="two columns">
+	      <label for="exampleEmailInput">Название листа</label>
+	      <input class="u-full-width" type="text" placeholder="listName" id="listName" value="3,4 курсы">
+	    </div>
+	    <div class="three columns">
+	      <label for="exampleRecipientInput">Добавьте файл для импорта</label>
+	      <input class="button-primary" type="file" id ="ExcelFile">
+	    </div>
+	    
+	  
+	  	<div class="four columns">
+	      <label for="exampleEmailInput">Введите букву столбца дня недели</label>
+	      <input class="u-full-width" type="text" placeholder="Пример A" id="dayOfWeek" value="A">
+	    </div>
+	    <div class="three columns">
+	      <label for="exampleEmailInput">Аналогично пары часов</label>
+	      <input class="u-full-width" type="text" placeholder="Пример B" id="numOfPar" value="C">
+	    </div>
+	  </div>
+	   <div class="row" style="padding-top:20px">
+		   	<div class="four columns">
+		      <label for="exampleEmailInput">Введите название группы</label>
+		      <input class="u-full-width" type="text" placeholder="Пример 41 группа КИТ" id="nameOfGroup" value="32 группа КИТ" >
+		    </div>
+		    <div class="eight columns">
+		      <label for="exampleEmailInput">Введите верхнюю левую ячейку группы(внутри неё должно быть название пары)</label>
+		      <input class="u-full-width" type="text" placeholder="Пример B2" id="mainGroup" value="M15">
+		    </div>
+	   </div>
+	   <div class="row" style="padding-top:20px">
+	   	
+	  		<a class="button button-primary" href="#" id="buttonSend">импорт</a>
+	   </div>
+	</form>
+	<div id="log"></div>
 </div>
+
+
+

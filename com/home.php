@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="/css/home.css">
 <script  src="/js/tableDD.js"></script>
+<title>Создание расписания</title>
 <body>
 	<div id ="box">
 
