@@ -6,7 +6,7 @@ $db = new MyDB();
 $db->connect();
 
 if (!empty($_FILES['ExcelFile']['tmp_name'])) { 
-	
+	echo "Даров";
 	$path = $_SERVER['DOCUMENT_ROOT']."/upload/".$_FILES['ExcelFile']['name']; 
 	$file_name="";
 	if (copy($_FILES['ExcelFile']['tmp_name'], $path)){ 
