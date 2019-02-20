@@ -2,6 +2,7 @@
  <script src="../js/dictionary.js">
  </script>
 <link rel="stylesheet" href="../css/dictionary.css">
+ <link rel="stylesheet" type="text/css" href="/css/my.css">
 <title>Словарь</title>
 <div id="tabs">
   <ul>
