@@ -14,7 +14,7 @@ if (!empty($_FILES['ExcelFile']['tmp_name'])) {
 		$file_name = $_FILES['ExcelFile']['name'];
 	}
 
-	require $_SERVER['DOCUMENT_ROOT'].'vendor/autoload.php';
+	require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 	//use PhpOffice\PhpSpreadsheet;
 
 	$inputFileName = $path;
