@@ -3,7 +3,11 @@
 	<link rel="stylesheet" type="text/css" href="/m/css/skeleton.css">
 	<link rel="stylesheet" type="text/css" href="/m/css/normalize.css">	
 	<script src="/js/importExcel.js"></script>
-
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<style>
+   		/*описание стилей*/
+   		#loadImg{position:absolute; z-index:1000; display:none}
+  	</style>
 <title>ImportFromExcel</title>
 
 <div class ="container" >
@@ -44,6 +48,7 @@
 	  		<a class="button button-primary" href="#" id="buttonSend">импорт</a>
 	   </div>
 	</form>
+	<img id="loadImg" src="/img/load.gif" />
 	<div id="log"></div>
 </div>
 

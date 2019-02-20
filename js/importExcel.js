@@ -32,6 +32,7 @@ $(document).ready(function (e) {
         formData.append('numOfPar', $('#numOfPar').val());
         formData.append('nameOfGroup', $('#nameOfGroup').val());
         formData.append('mainGroup', $('#mainGroup').val());
+        startLoadingAnimation();
         //отправляем через ajax
         $.ajax({
             url: "/cfg2/importExcelDB.php",
@@ -43,10 +44,32 @@ $(document).ready(function (e) {
             data: formData, //указываем что отправляем
             success: function(data){
                 $("#log").html(data);
+                stopLoadingAnimation();
             },
             error: function( jqXHR, textStatus, errorThrown ){
+                stopLoadingAnimation();
                 console.log('ОШИБКИ AJAX запроса: ' + textStatus );
             }
         });
     });
 });
+
+function startLoadingAnimation() // - функция запуска анимации
+{
+  // найдем элемент с изображением загрузки и уберем невидимость:
+  var imgObj = $("#loadImg");
+  imgObj.show();
+ 
+  // вычислим в какие координаты нужно поместить изображение загрузки,
+  // чтобы оно оказалось в серидине страницы:
+  var centerY = $(window).scrollTop() + ($(window).height() + imgObj.height())/2;
+  var centerX = $(window).scrollLeft() + ($(window).width() + imgObj.width())/2;
+ 
+  // поменяем координаты изображения на нужные:
+  imgObj.offset({top:centerY, left:centerX});
+}
+ 
+function stopLoadingAnimation() // - функция останавливающая анимацию
+{
+  $("#loadImg").hide();
+}
