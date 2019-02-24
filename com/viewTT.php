@@ -6,15 +6,24 @@ $sql = "SELECT DISTINCT gruppa.nam_gruppa FROM para JOIN gruppa on para.gruppa_i
 $db->run($sql);
 $db->num_row();
 $ngrupp=$db->nrows;
+
+$sql = "SELECT DISTINCT gruppa.nam_gruppa FROM tpara JOIN gruppa on tpara.gruppa_id = gruppa.ID";
+$db->run($sql);
+$db->num_row();
+$ngrupp+=$db->nrows;
+
+
 echo "<body style ='width:".(500*$ngrupp+200)."px' >";
+ echo " <table style ='width:".(500*$ngrupp+200)."px'>";
 ?>
 <title>Просмотр расписания</title>
 <body >
  <h1>Расписание</h1> 
-<table <?php echo "style ='width:".(500*$ngrupp+200)."px'"; ?>>
+
   
   
  <?php
+
 $main_matrix = array();
 
 $sql = " SELECT num_den, num_par, predmet.nam_predmet, prepod.nam_prepod, gruppa.nam_gruppa FROM para JOIN prepod on para.prepod_id = prepod.ID JOIN predmet on para.predmet_id = predmet.ID JOIN gruppa on para.gruppa_id = gruppa.ID";
