@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/css/wishes2.css">
+ <link rel="stylesheet" type="text/css" href="/css/my.css">
 <div id ="tab">
   <?php
 $sql = "SELECT DISTINCT gruppa.nam_gruppa FROM para JOIN gruppa on para.gruppa_id = gruppa.ID";
