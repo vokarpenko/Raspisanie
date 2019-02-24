@@ -6,12 +6,12 @@ $sql = "SELECT DISTINCT gruppa.nam_gruppa FROM para JOIN gruppa on para.gruppa_i
 $db->run($sql);
 $db->num_row();
 $ngrupp=$db->nrows;
-echo "<body style ='width:".(500*$ngrupp)."px' >";
+echo "<body style ='width:".(500*$ngrupp+200)."px' >";
 ?>
 <title>Просмотр расписания</title>
 <body >
  <h1>Расписание</h1> 
-<table >
+<table <?php echo "style ='width:".(500*$ngrupp+200)."px'"; ?>>
   
   
  <?php
