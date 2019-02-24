@@ -13,8 +13,8 @@ $db->num_row();
 $ngrupp+=$db->nrows;
 
 
-echo "<body style ='width:".(500*$ngrupp+200)."px' >";
- echo " <table style ='width:".(500*$ngrupp+200)."px'>";
+echo "<body style ='width:".(500*$ngrupp+300)."px' >";
+ echo " <table style ='width:".(500*$ngrupp+300)."px'>";
 ?>
 <title>Просмотр расписания</title>
 <body >
