@@ -227,4 +227,35 @@
         }           
     }
 
+
+    function addToMatrixFrDb($db,$main_matrix,$sql){
+        $db->run($sql);
+        $db->num_row();
+        for ($i = 0 ; $i < $db->nrows ; ++$i)
+        {
+
+          $db->row();
+          if(array_key_exists($db->data['nam_gruppa'],$main_matrix))
+          {
+              if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
+                  $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+              }else{
+                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
+                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+              }
+          }
+          else{
+            $main_matrix[$db->data['nam_gruppa']]= array();
+            if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
+                  $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+              }else{
+                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
+                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+              }
+
+          }
+          
+        }
+        return $main_matrix;
+    }
 ?>

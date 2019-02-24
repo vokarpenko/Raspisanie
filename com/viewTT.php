@@ -15,34 +15,14 @@ echo "<body style ='width:".(500*$ngrupp)."px' >";
   
  <?php
 $main_matrix = array();
+
 $sql = " SELECT num_den, num_par, predmet.nam_predmet, prepod.nam_prepod, gruppa.nam_gruppa FROM para JOIN prepod on para.prepod_id = prepod.ID JOIN predmet on para.predmet_id = predmet.ID JOIN gruppa on para.gruppa_id = gruppa.ID";
-$db->run($sql);
-$db->num_row();
-for ($i = 0 ; $i < $db->nrows ; ++$i)
-{
+$main_matrix = addToMatrixFrDb($db,$main_matrix,$sql);
 
-  $db->row();
-  if(array_key_exists($db->data['nam_gruppa'],$main_matrix))
-  {
-      if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }else{
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }
-  }
-  else{
-    $main_matrix[$db->data['nam_gruppa']]= array();
-    if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-          $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }else{
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-        $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
-      }
 
-  }
-  
-}
+
+$sql = " SELECT num_den, num_par, tpredmet.nam_predmet, tprepod.nam_prepod, gruppa.nam_gruppa FROM tpara JOIN tprepod on tpara.prepod_id = tprepod.ID JOIN tpredmet on tpara.predmet_id = tpredmet.ID JOIN gruppa on tpara.gruppa_id = gruppa.ID";
+$main_matrix = addToMatrixFrDb($db,$main_matrix,$sql);
 
 
 foreach ( $main_matrix as $key =>$gruppa ) {
