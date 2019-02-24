@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/css/wishes2.css">
- <link rel="stylesheet" type="text/css" href="/css/my.css">
+
 <div id ="tab">
   <?php
 $sql = "SELECT DISTINCT gruppa.nam_gruppa FROM para JOIN gruppa on para.gruppa_id = gruppa.ID";
@@ -74,7 +74,7 @@ $table.="<tr>";
       $table.="<tr><td style ='width:5%'>".$j."</td>";
 
       foreach ( $main_matrix as $key =>$gruppa ) {
-        $table.="<td style ='width:400px'><pre>".$main_matrix[$key][$i][$j]."</pre></td>";
+        $table.="<td style ='width:500px'><pre>".$main_matrix[$key][$i][$j]."</pre></td>";
       }
       $table.="</tr>";
     }
