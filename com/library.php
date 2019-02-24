@@ -85,6 +85,12 @@
             $ar1[1]=$boldT;
             $ar1[2]=$italicT;
             return $ar1;
+        }else{
+            $ar1 = array();
+            $ar1[0]=$value;
+            $ar1[1]=$value;
+            $ar1[2]="";
+            return $ar1;
         }
     }
     function isNumber($str){

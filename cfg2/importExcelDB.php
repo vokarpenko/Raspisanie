@@ -6,7 +6,6 @@ $db = new MyDB();
 $db->connect();
 
 if (!empty($_FILES['ExcelFile']['tmp_name'])) { 
-	echo "Даров";
 	$path = $_SERVER['DOCUMENT_ROOT']."/upload/".$_FILES['ExcelFile']['name']; 
 	$file_name="";
 	if (copy($_FILES['ExcelFile']['tmp_name'], $path)){ 
@@ -24,6 +23,8 @@ if (!empty($_FILES['ExcelFile']['tmp_name'])) {
 	$reader->setReadDataOnly(false);
 	$objPHPExcel=$reader->load($inputFileName);
 	$objPHPExcel->setActiveSheetIndexByName($_POST['listName']);
+	
+	
 
 	$dayOfWeek = $_POST['dayOfWeek'];
 	$numOfPar = $_POST['numOfPar'];
@@ -131,11 +132,10 @@ if (!empty($_FILES['ExcelFile']['tmp_name'])) {
 		$nmg++;
 	}
 	echo $table;
-	//$ar1 = getFormat(getCellValue($objPHPExcel,$_POST['mainGroup']));
+	
 	
 }
 
  
-// 
-// echo getFormat(getCellValue($objPHPExcel,'AM42'));
+
 ?>
