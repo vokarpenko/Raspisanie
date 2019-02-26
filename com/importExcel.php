@@ -35,7 +35,7 @@
 	  </div>
 	   <div class="row" style="padding-top:20px">
 		   	<div class="four columns">
-		      <label for="exampleEmailInput">Введите название группы</label>
+		      <label for="exampleEmailInput">Введите название группы и подгруппы</label>
 		      <input class="u-full-width" type="text" placeholder="Пример 41 группа КИТ" id="nameOfGroup" value="32 группа КИТ" >
 		    </div>
 		    <div class="eight columns">
