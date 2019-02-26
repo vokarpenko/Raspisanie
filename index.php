@@ -95,6 +95,11 @@ else{
 				include($_SERVER['DOCUMENT_ROOT']."/com/putInfo.php");
 				break;
 
+				case "mPrepod":
+				include($_SERVER['DOCUMENT_ROOT']."/com/infoPrepods.php");
+				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
+				break;
+
 				case "dictionary":
 				include($_SERVER['DOCUMENT_ROOT']."/com/dictionary.php");
 				break;

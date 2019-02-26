@@ -31,6 +31,7 @@ $(document).ready(function (e) {
         formData.append('dayOfWeek', $('#dayOfWeek').val());
         formData.append('numOfPar', $('#numOfPar').val());
         formData.append('nameOfGroup', $('#nameOfGroup').val());
+        formData.append('subgroup', $('#subgroup').val());
         formData.append('mainGroup', $('#mainGroup').val());
         startLoadingAnimation();
         //отправляем через ajax

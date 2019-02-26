@@ -51,8 +51,8 @@
         $db->row();
         $prepod_id = $db->data['ID'];
         $fio = $db->data['nam_gruppa'];
-       
-        $table .= "<li class='ui-widget-content'>".$prepod_id." ".$fio."</li>";     
+        $subgroup = $db->data['subgroup'];
+        $table .= "<li class='ui-widget-content'>".$prepod_id." ".$fio." ".$subgroup."</li>";     
       }
   }
   echo $table;

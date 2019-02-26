@@ -18,7 +18,7 @@
 		  	$sql1 = " DELETE FROM predmet WHERE ID = '".$value."'";
 		  	
 		 	$db->run($sql1);
-			$db->run($sql2);
+			
 			
 		
 		}
@@ -28,7 +28,7 @@
 		  	$sql1 = " DELETE FROM gruppa WHERE ID = '".$value."'";
 		  	
 		 	$db->run($sql1);
-			$db->run($sql2);
+			
 			
 		
 		}

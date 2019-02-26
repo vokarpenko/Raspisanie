@@ -44,6 +44,25 @@ $(document).ready(function (e) {
                 }
         	});
 	});
+    $("#sbPodgruppa").keyup( function () {
+            $("here").show();
+            var key = $(this).val();
+            var key2 = $("#sbGruppa").val();
+ 
+            $.ajax({
+                url:'/cfg2/do_search.php',
+                type:'GET',
+                data:'keyword='+key2+'&type=4&keyword2='+key,
+                success:function (data) {
+                    $("#results4").html(data);
+                    $("#results4").slideDown('fast');
+                },
+                error: function( jqXHR, textStatus, errorThrown ){
+                    
+                    console.log('ОШИБКИ AJAX запроса: ' + textStatus );
+                }
+            });
+    });
 	
 
 

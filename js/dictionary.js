@@ -202,7 +202,7 @@
          	$.ajax({
                 url:'/cfg2/addInDict.php',
                 type:'POST',
-                data:'ver=2&name='+$('#name2').val(),
+                data:'ver=2&name='+$('#name2').val()+'&subgroup='+$('#Podgrname').val(),
                 success:function (data) {
                 	if(data!=""){
 	                    $("#selectable3").html($("#selectable3").html()+"<li class='ui-widget-content'>"+data+"</li>");

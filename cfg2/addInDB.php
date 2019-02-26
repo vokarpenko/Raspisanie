@@ -8,12 +8,14 @@
 	$db->connect();
 
 	if ($_GET['prepod'] && !empty($_GET['prepod'])&&($_GET['predmet'])&& 
-		!empty($_GET['predmet'])&&($_GET['gruppa'])&& !empty($_GET['gruppa'])&&
+		!empty($_GET['predmet'])&&($_GET['gruppa'])&& !empty($_GET['gruppa'])
+		&&($_GET['subgroup'])&& !empty($_GET['subgroup'])&&
 		($_GET['day'])&& !empty($_GET['day'])&&($_GET['para'])&& !empty($_GET['para'])) {
 	    // никогда не доверяйте входящим данным! Фильтруйте всё!
 	    $prepod = $db->decode($_GET['prepod']);
 		$predmet = $db->decode($_GET['predmet']);
 		$gruppa = $db->decode($_GET['gruppa']);
+		$subgroup =$db->decode($_GET['subgroup']);
 		$day = $db->decode($_GET['day']);
 		$para = $db->decode($_GET['para']);
 	    // Строим запрос
@@ -30,7 +32,7 @@
 	    	if($db->nrows){
 	    		$db->row();
 	    		$predmet_id = $db->data['ID'];
-	    		$sql = "SELECT * FROM gruppa WHERE nam_gruppa LIKE '" . $gruppa. "'";
+	    		$sql = "SELECT * FROM gruppa WHERE nam_gruppa LIKE '" . $gruppa. "' AND subgroup LIKE '".$subgroup."'";
 	    		$db->run($sql);
 	    		$db->num_row();
 	    		if($db->nrows){

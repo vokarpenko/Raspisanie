@@ -34,13 +34,17 @@
 	    </div>
 	  </div>
 	   <div class="row" style="padding-top:20px">
-		   	<div class="four columns">
-		      <label for="exampleEmailInput">Введите название группы и подгруппы</label>
-		      <input class="u-full-width" type="text" placeholder="Пример 41 группа КИТ" id="nameOfGroup" value="32 группа КИТ" >
+		   	<div class="three columns">
+		      <label for="exampleEmailInput">Введите название группы</label>
+		      <input class="u-full-width" type="text" placeholder="Пример 42 группа" id="nameOfGroup" value="42 группа" >
 		    </div>
-		    <div class="eight columns">
-		      <label for="exampleEmailInput">Введите верхнюю левую ячейку группы(внутри неё должно быть название пары)</label>
-		      <input class="u-full-width" type="text" placeholder="Пример B2" id="mainGroup" value="M15">
+		    <div class="two columns">
+		      <label for="exampleEmailInput">Подгруппа</label>
+		      <input class="u-full-width" type="text" placeholder="Пример КИТ" id="subgroup" value="КММ" >
+		    </div>
+		    <div class="seven columns">
+		      <label for="exampleEmailInput">Введите верхнюю левую ячейку группы</label>
+		      <input class="u-full-width" type="text" placeholder="Пример B2" id="mainGroup" value="AA15">
 		    </div>
 	   </div>
 	   <div class="row" style="padding-top:20px">

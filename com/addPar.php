@@ -38,6 +38,11 @@
 		    	<input type="text" list="results3" id="sbGruppa"/>
 		    	<datalist id="results3"></datalist>
 		    </div>
+		    <div id="content">
+		    	Подгруппа:<br>
+		    	<input type="text" list="results4" id="sbPodgruppa"/>
+		    	<datalist id="results4"></datalist>
+		    </div>
 		    <br>
 		    <br>
 		    <br>

@@ -93,13 +93,15 @@
       без возможности возвращения, вы уверены?</p>
     </div>
     <div id="dialog-form3" title="Добавить новую группу?">
-          <p class="validateTips">Введите название группы.</p>
+          <p class="validateTips">Введите название группы и подгруппы.</p>
          
           <form>
             <fieldset>
-              <label for="name">Название</label>
-              <input type="text" name="name" id="name2" value="41kpm" class="text ui-widget-content ui-corner-all">
-              
+              <label for="name">Название группы</label>
+              <input type="text" name="name" id="name2" value="41 группа" class="text ui-widget-content ui-corner-all" style="margin-bottom: 30px;">
+
+              <div >Название подгруппы</div>
+              <input type="text" name="Podgrname" id="Podgrname" value="КИТ" class="text ui-widget-content ui-corner-all">
          
               <!-- Allow form submission with keyboard without duplicating the dialog button -->
               <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">

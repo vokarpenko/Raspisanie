@@ -30,7 +30,7 @@ if (!empty($_FILES['ExcelFile']['tmp_name'])) {
 	$numOfPar = $_POST['numOfPar'];
 	$mainGroup = $_POST['mainGroup'];
 	$nameOfGroup = $_POST['nameOfGroup'];
-
+	$subgroup = $_POST['subgroup'];
 
 	$ar2=letterNumber($mainGroup);
 	$lmg=$ar2[0];
@@ -42,7 +42,13 @@ if (!empty($_FILES['ExcelFile']['tmp_name'])) {
 	$tday="";
 
 	$table="";
-	$gruppa_id = addNewRetID($db,"gruppa","nam_gruppa",$nameOfGroup); 
+	
+	$keyV=array(); $value = array();
+	$keyV[0]="nam_gruppa";
+	$keyV[1]="subgroup";
+	$value[0]=$nameOfGroup;
+	$value[1]=$subgroup;
+	$gruppa_id = addNewRetID($db,"gruppa",$keyV,$value); 
 
 	while ( getCellValue($objPHPExcel,$dayOfWeek.$nmg) !="") {
 		$day = dowtn(getCellValue($objPHPExcel,$dayOfWeek.$nmg));

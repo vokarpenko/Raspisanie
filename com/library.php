@@ -241,22 +241,27 @@
         {
 
           $db->row();
-          if(array_key_exists($db->data['nam_gruppa'],$main_matrix))
+          $gruppa=$db->data['nam_gruppa']." ".$db->data['subgroup'];
+          $prepod = $db->data['nam_prepod'];
+          $den = $db->data['num_den'];
+          $num_par = $db->data['num_par'];
+          $nam_predmet =$db->data['nam_predmet'];
+          if(array_key_exists($gruppa,$main_matrix))
           {
-              if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-                  $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+              if(array_key_exists($den, $main_matrix[$gruppa])){
+                  $main_matrix[$gruppa][$den][$num_par] = "<b>".$nam_predmet."</b>\n<i>".$prepod."</i>"; 
               }else{
-                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+                $main_matrix[$gruppa][$den] =array();
+                $main_matrix[$gruppa][$den][$num_par] = "<b>".$nam_predmet."</b>\n<i>".$prepod."</i>"; 
               }
           }
           else{
-            $main_matrix[$db->data['nam_gruppa']]= array();
-            if(array_key_exists($db->data['num_den'], $main_matrix[$db->data['nam_gruppa']])){
-                  $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+            $main_matrix[$gruppa]= array();
+            if(array_key_exists($den, $main_matrix[$gruppa])){
+                  $main_matrix[$gruppa][$den][$num_par] = "<b>".$nam_predmet."</b>\n<i>".$prepod."</i>"; 
               }else{
-                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']] =array();
-                $main_matrix[$db->data['nam_gruppa']][$db->data['num_den']][$db->data['num_par']] = "<b>".$db->data['nam_predmet']."</b>\n<i>".$db->data['nam_prepod']."</i>"; 
+                $main_matrix[$gruppa][$den] =array();
+                $main_matrix[$gruppa][$den][$num_par] = "<b>".$nam_predmet."</b>\n<i>".$prepod."</i>"; 
               }
 
           }

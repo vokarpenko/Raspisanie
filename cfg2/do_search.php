@@ -7,11 +7,13 @@
 	$db = new MyDB();
 	$db->connect();
 
-	if ($_GET['keyword'] && !empty($_GET['keyword'])) {
+	if ( !empty($_GET['keyword'])&&$_GET['keyword']) {
 	    // никогда не доверяйте входящим данным! Фильтруйте всё!
 	    $word = $db->decode($_GET['keyword']);
+	    $word2 = "";
+	    
 	    // Строим запрос
-	    $tabl=""; $param="";
+	    $tabl=""; $param=""; $param2="";
 	    switch ($_GET['type']) {
 	    	case "1":
 		    	$tabl = "prepod";
@@ -25,8 +27,20 @@
 		    	$tabl = "gruppa";
 		    	$param ="nam_gruppa"; 
 		    	break;
+		    case "4":
+		    	$tabl = "gruppa";
+		    	$param ="subgroup"; 
+		    	if (!empty($_GET['keyword2'])&& $_GET['keyword2']) {
+	    			$word2=$db->decode($_GET['keyword2']);
+	    		}
+		    	break;
 		}
-		$sql = "SELECT ".$param." FROM ".$tabl." WHERE ".$param." LIKE '" . $word . "%' ORDER BY ".$param;
+		if($_GET['type']=="4"){
+			$sql = "SELECT `subgroup` FROM `gruppa` WHERE `nam_gruppa` LIKE '".$word."%' AND `subgroup` LIKE '".$word2."%'";
+		}
+		else{
+			$sql = "SELECT ".$param." FROM ".$tabl." WHERE ".$param." LIKE '" . $word . "%' ORDER BY ".$param;
+		}
 	    // Получаем результаты
 	    $db->run($sql);
 	    $db->num_row();

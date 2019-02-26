@@ -26,19 +26,20 @@
 		}
 	}	
 	if($_POST['ver']==2){
-		$sql = " SELECT * FROM gruppa where nam_gruppa = '".$_POST['name']."'";
+		$sql = " SELECT * FROM gruppa where nam_gruppa = '".$_POST['name']."' AND subgroup = '".$_POST['subgroup']."'";
       	$db->run($sql);
       	$db->num_row();
       	if(!$db->nrows){
-			$sql = "INSERT INTO `gruppa` (`ID`,`nam_gruppa`) VALUES (NULL,'".$_POST['name']."')";
+			$sql = "INSERT INTO `gruppa` (`ID`,`nam_gruppa`,`subgroup`) VALUES (NULL,'".$_POST['name']."','".$_POST['subgroup']."')";
 			$db->run($sql);
-			$sql = " SELECT * FROM gruppa where nam_gruppa = '".$_POST['name']."'";
+			$sql = " SELECT * FROM gruppa where nam_gruppa = '".$_POST['name']."' AND subgroup = '".$_POST['subgroup']."'";;
 	      	$db->run($sql);
 	      	
 	      	$db->row();
 	      	$prepod_id = $db->data['ID'];
         	$fio = $db->data['nam_gruppa'];
-			echo $prepod_id." ".$fio;
+        	$subgr=$db->data['subgroup'];
+			echo $prepod_id." ".$fio." ".$subgr;
 		}
 		else{
 			echo "";
