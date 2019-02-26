@@ -4,8 +4,7 @@
 	$gruppa = $_GET['gruppa'];
 	$subgroup = $_GET['subgroup'];
 	$num_day = $_GET['nday'];
-
-	$query = "SELECT * FROM gruppa WHERE nam_gruppa='".$gruppa."' AND subgroup = '".$subgroup."'";
+	$query = "SELECT * FROM `gruppa` WHERE `nam_gruppa`='".$gruppa."' AND `subgroup` = '".$subgroup."'";
 	$db->run($query);
 	$db->row();
 	$gruppa_id = $db->data['ID'];
@@ -38,7 +37,6 @@
 		}
 	}
 	$table= array_merge($table,$table2);
-    
 
 	$db->stop();
 ?>
