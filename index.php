@@ -100,6 +100,11 @@ else{
 				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
 				break;
 
+				case "mGrupp":
+				include($_SERVER['DOCUMENT_ROOT']."/com/infoGroups.php");
+				echo "<timetable>".json_encode($table,JSON_UNESCAPED_UNICODE)."</timetable>";
+				break;
+
 				case "dictionary":
 				include($_SERVER['DOCUMENT_ROOT']."/com/dictionary.php");
 				break;
