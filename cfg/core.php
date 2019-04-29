@@ -3,10 +3,10 @@
 // MYSQL
 	class MyDB 
 	{
-		var $dblogin = "phpmyadmin"; // ВАШ ЛОГИН К БАЗЕ ДАННЫХ
-		var $dbpass = "5E6mLD%)25"; // ВАШ ПАРОЛЬ К БАЗЕ ДАННЫХ
-		var $db = "raspisanie"; // НАЗВАНИЕ БАЗЫ ДЛЯ САЙТА
-		var $dbhost="localhost";
+		var $dblogin = "bitrix"; // ВАШ ЛОГИН К БАЗЕ ДАННЫХ
+		var $dbpass = "123"; // ВАШ ПАРОЛЬ К БАЗЕ ДАННЫХ
+		var $db = "bitrix"; // НАЗВАНИЕ БАЗЫ ДЛЯ САЙТА
+		var $dbhost="mysql";
 
 		var $link;
 		var $query;
